@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     end
     def new
         @users = User.new
+        
     end
     
     def create
@@ -21,6 +22,12 @@ class UsersController < ApplicationController
         
     end
     
+    def destroy
+        @users = User.find(params[:id])
+        @users.destroy
+        
+        redirect_to users_path
+    end
 end
 
 private
