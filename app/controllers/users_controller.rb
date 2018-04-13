@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     def show
         @users = User.find(params[:id]) 
     end
+    
     def new
         @users = User.new
         
@@ -28,6 +29,11 @@ class UsersController < ApplicationController
         
         redirect_to users_path
     end
+    
+    def sign_in
+        
+    end
+    
 end
 
 private

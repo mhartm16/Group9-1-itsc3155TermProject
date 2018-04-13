@@ -1,19 +1,31 @@
-<h1>Login or Create an account</h1>
-<%= link_to 'Login', new_user_path %>
+<div id="nav_bar">
+	<ul>
+		<li id="heading"><div class="nav_item"><h1><%= link_to 'Stock Market', controller: 'stock' %></h1></div></li>
+    <li id="user_link"><div class="nav_item"><h2><%= link_to 'Create Account', new_user_path %></h2></div></li>
+	</ul>
+</div>
+
+<h1 class="pageHeader">Login or Create an account</h1>
+
 <table>
   <tr>
     <th>Email</th>
+    <th></th>
     <th>Password</th>
   </tr>
  
   <% @users.each do |user| %>
-    <tr>
-      <td><%= user.email %></td>
-      <td><%= user.password %></td>
-      <td><%= link_to 'Show', user_path(user) %></td>
-      <td><%= link_to 'Destroy', user_path(user), method: :delete, data: { confirm: 'Are you sure you want to delete this account?' } %></td>
-      
-    </tr>
+    <%= form_for :users, url: users_path do |f| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td></td>
+        <td><%= password_field_tag(:password, "", placeholder: "Password", id:"passwordField")  %></td>
+        <!--<td><%= user.password %></td>-->
+        <td><%= link_to 'Show', user_path(user) %></td>
+        <td><%= link_to 'Destroy', user_path(user), method: :delete, data: { confirm: 'Are you sure you want to delete this account?' } %></td>
+        <!--<td><%= link_to 'Sign in', user_path(user), method: :sign_in %></td>-->
+        
+      </tr>
+    <% end %>  
   <% end %>
 </table>
-<%= link_to 'Home', controller: 'stock' %>

@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 h1 {
-    font-size: 48px;
+    font-size: 32px;
     text-decoration: underline;
 }
 
@@ -13,4 +13,11 @@ p {
 
 body {
     background-color: #d3d3d3;
+}
+
+
+
+#user_link {
+    float: right;
+    text-align:center;
 }

@@ -1,3 +1,11 @@
+<div id="nav_bar">
+	<ul>
+		<li id="heading"><div class="nav_item"><h1><%= link_to 'Stock Market', controller: 'stock' %></h1></div></li>
+        <li id="user_link"><div class="nav_item"><h2><%= link_to 'Users', controller: 'users' %></h2></div></li>
+	</ul>
+</div>
+<div class="mainBody">
+<h1>Account Information</h1>
 <p>
     <strong>Email:</strong>
     <%= @users.email %>
@@ -8,3 +16,4 @@
     <%= @users.password %>
 </p>
 <%= link_to 'Back', users_path %>
+</div>
